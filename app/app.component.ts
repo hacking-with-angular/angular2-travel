@@ -29,9 +29,9 @@ export class AppComponent {
     //title = 'Tour of heros';
     //myHero = 'dreamapple';
 
-    title: String; // 默认为共有
-    myHero: String;
-    heros: String[];
+    title: string; // 默认为共有
+    myHero: string;
+    heros: string[];
 
     constructor() {
         this.title = 'Tour of heros';
