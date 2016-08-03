@@ -6,7 +6,7 @@ import {Component} from '@angular/core';
  */
 @Component({
     selector: 'my-app',
-    template: '<h1>My First Angular2 Travel</h1>'
+    templateUrl: 'app/templates/app-template.html'
 })
 
 /*
@@ -14,4 +14,37 @@ import {Component} from '@angular/core';
  * 这里相当于组件控制器
  */
 export class AppComponent {
+    msg = 'dreamapple';
+    input1 = '';
+    input2 = '';
+    input3 = '';
+
+    showMsg() {
+        alert(this.msg);
+    }
+
+    keyupHandler1(event:any) {
+        this.input1 = event.target.value;
+    }
+
+    keyupHandler2(event: KeyboardEvent) {
+        this.input2 = (<HTMLInputElement>event.target).value;
+    }
+
+    keyupHandler3(value: string) {
+        this.input3 = value;
+    }
+
+    item = '';
+    itemList = [];
+
+    addItem(name) {
+        this.itemList.push({name: name, status: 'not complete'});
+    }
+    removeItem(id) {
+        this.itemList.splice(id, 1);
+    }
+    doneItem(id) {
+        this.itemList[id].status = 'done!';
+    }
 }

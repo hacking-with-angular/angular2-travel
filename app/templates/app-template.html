@@ -1,0 +1,63 @@
+<h1>User Input</h1>
+<div>
+    用户的点击事件
+    <br>
+    <button (click)="showMsg()" >show msg</button>
+</div>
+<div>
+    keyup事件,传递原生的event对象
+    <br>
+    <input (keyup)="keyupHandler1($event)" type="text">
+    <br>
+    输入框中的值为: {{input1}}
+</div>
+<div>
+    keyup事件,传递原生的event对象,使用强类型
+    <br>
+    <input (keyup)="keyupHandler2($event)" type="text">
+    <br>
+    输入框中的值为: {{input2}}
+</div>
+<div>
+    使用模板引用变量
+    <br>
+    <input #name1 (keyup)="0" type="text">
+    <br>
+    输入框中的值为: {{name1.value}}
+</div>
+<div>
+    使用模板变量,获取模板变量的值
+    <br>
+    <input #name2 (keyup)="keyupHandler3(name2.value)" type="text">
+    <br>
+    输入框中的值为: {{input3}}
+</div>
+<div>
+    使用模板引用变量
+    <br>
+    <input #name3 (keyup.enter)="0" type="text">
+    <br>
+    输入框中的值为: {{name3.value}}
+</div>
+<div>
+    使用模板引用变量
+    <br>
+    <input #name4 (blur)="0" type="text">
+    <br>
+    输入框中的值为: {{name4.value}}
+</div>
+<div>
+    我们运用上面学的知识,来写一个TODO list小程序;效果如下:
+    <br>
+    <input #item
+           (keyup.enter)="addItem(item.value);item.value=''"
+           type="text">
+    <button (click)="addItem(item.value)">add</button>
+    <ul>
+        <li *ngFor="let item of itemList; let i= index">
+            {{item.name}} - 完成度:{{item.status}}
+            <button (click)="removeItem(i)">delete</button>
+            <button (click)="doneItem(i)">done</button>
+        </li>
+    </ul>
+</div>
