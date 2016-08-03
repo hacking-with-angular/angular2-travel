@@ -13,4 +13,5 @@ import {Component} from '@angular/core';
  * 导出这个组件,也就是一个类
  * 这里相当于组件控制器
  */
-export class AppComponent {}
+export class AppComponent {
+}
