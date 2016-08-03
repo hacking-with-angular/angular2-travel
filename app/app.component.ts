@@ -8,17 +8,7 @@ import {Hero} from './hero';
  */
 @Component({
     selector: 'my-app',
-    template: `
-        <h1>{{title}}</h1>
-        <h2>My favorite hero is: {{myHero}}</h2>
-        <p>Heros:</p>
-        <ul>
-            <li *ngFor="let hero of heros">
-                {{hero.name}}
-            </li>
-        </ul>
-        <p *ngIf="heros.length > 3">There are many heros!</p>
-        `
+    templateUrl: 'app/templates/basics-app-template.html'
 })
 
 /*
@@ -31,7 +21,7 @@ export class AppComponent {
 
     title: string; // 默认为共有
     myHero: string;
-    heros: string[];
+    heros: Hero[]; // 数组的元素类型为Hero
 
     constructor() {
         this.title = 'Tour of heros';
@@ -44,5 +34,42 @@ export class AppComponent {
         ];
         //noinspection TypeScriptUnresolvedVariable
         this.myHero = this.heros[0].name;
+    }
+
+    /* 下面部分的代码是关于用户输入的 */
+    msg = 'World';
+    value = '';
+    valueOfKeyEvent = '';
+    yourName = '';
+    value1 = '';
+    value2 = '';
+
+    showHello() {
+        alert('Hello, ' + this.msg);
+    }
+    // 没有使用强类型
+    captureKeyUp(e: any) {
+        this.value = e.target.value;
+    }
+    // 使用强类型
+    captureKeyEvent(e: KeyboardEvent) {
+        this.valueOfKeyEvent = (<HTMLInputElement>event.target).value;
+    }
+    // 使用模板变量
+    getUserName(value: string) {
+        this.yourName = value;
+    }
+
+    item = '';
+    itemList = [];
+
+    addItem(name) {
+        this.itemList.push({name: name, status: 'not complete'});
+    }
+    removeItem(id) {
+        this.itemList.splice(id, 1);
+    }
+    doneItem(id) {
+        this.itemList[id].status = 'done!';
     }
 }

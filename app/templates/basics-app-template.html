@@ -1,0 +1,73 @@
+<!-- 用户输入 -->
+<hr>
+<p class="divider">下面的部分是关于: 用户的输入(user input)</p>
+<div>
+    用户点击事件:
+    <button (click)="showHello()">alert hello</button>
+</div>
+<div>
+    输入框的keyup事件
+    <input (keyup)="captureKeyUp($event)" type="text">
+    <br>
+    {{value}}
+</div>
+<div>
+    输入框的keyup事件(使用了强类型)
+    <input (keyup)="captureKeyEvent($event)" type="text">
+    <br>
+    {{valueOfKeyEvent}}
+</div>
+<div>
+    使用模板变量
+    <input #username (keyup)="0" type="text">
+    <br>
+    {{username.value}}
+</div>
+<div>
+    使用模板变量重写上面的例子
+    <input #name (keyup)="getUserName(name.value)" type="text">
+    <br>
+    {{yourName}}
+</div>
+<div>
+    键盘事件过滤,使用[keyup.enter],并且在模板中进行赋值,这是比较好的一种做法
+    <input #key1 (keyup.enter)="value1=key1.value" type="text">
+    <br>
+    {{value1}}
+</div>
+<div>
+    键盘事件过滤,使用[keyup.enter]还有[blur]事件,并且在模板中进行赋值,这是比较好的一种做法
+    <input #key2
+           (blur)="value2=key2.value"
+           (keyup.enter)="value2=key2.value" type="text">
+    <br>
+    {{value2}}
+</div>
+<div>
+    我们运用上面学的知识,来写一个TODO list小程序;效果如下:
+    <br>
+    <input #item
+           (keyup.enter)="addItem(item.value);item.value=''"
+           type="text">
+    <button (click)="addItem(item.value)">add</button>
+    <ul>
+        <li *ngFor="let item of itemList; let i= index">
+            {{item.name}} - 完成度:{{item.status}}
+            <button (click)="removeItem(i)">delete</button>
+            <button (click)="doneItem(i)">done</button>
+        </li>
+    </ul>
+</div>
+
+<!-- 展示数据 -->
+<hr>
+<p class="divider">下面的部分是关于: 展示数据的(displaying data)</p>
+<h1>{{title}}</h1>
+<h2>My favorite hero is: {{myHero}}</h2>
+<p>Heros:</p>
+<ul>
+    <li *ngFor="let hero of heros">
+        {{hero.name}}
+    </li>
+</ul>
+<p *ngIf="heros.length > 3">There are many heros!</p>

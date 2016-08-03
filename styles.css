@@ -6,6 +6,13 @@ h1 {
 body {
     margin: 2em;
 }
+.divider {
+    height: 16px;
+    background-color: #000;
+    color: white;
+    font-size: 15px;
+    line-height: 16px;
+}
 
 /*
  * See https://github.com/angular/angular.io/blob/master/public/docs/_examples/styles.css
