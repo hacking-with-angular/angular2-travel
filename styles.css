@@ -6,6 +6,17 @@ h1 {
 body {
     margin: 2em;
 }
+.form-demo {
+    display: flex;
+    justify-content: center;
+}
+.container {
+    width: 600px;
+}
+.show-msg {
+    background-color: #888;
+    color: #fff;
+}
 
 /*
  * See https://github.com/angular/angular.io/blob/master/public/docs/_examples/styles.css

@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {UserFormComponent} from './form.component';
 
 /*
  * 别忘记了使用@前缀
@@ -6,7 +7,8 @@ import {Component} from '@angular/core';
  */
 @Component({
     selector: 'my-app',
-    template: '<h1>My First Angular2 Travel</h1>'
+    templateUrl: 'app/templates/app.html',
+    directives: [UserFormComponent]
 })
 
 /*
