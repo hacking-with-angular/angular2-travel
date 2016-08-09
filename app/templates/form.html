@@ -9,7 +9,7 @@
 <div class="DEMO-form-container">
     <h1>This is A Awesome Form!</h1>
     <p class="user-msg">UserInfo: {{userInfo}}</p>
-    <form class="DEMO-form">
+    <form class="DEMO-form" *ngIf="active" (ngSubmit)="submitForm()" #userForm="ngForm">
         <div class="form-group">
             <label for="username">Username</label>
             <input  [(ngModel)]="user.username" name="username" required #spy #username="ngModel"
@@ -44,7 +44,7 @@
                         [value]="fruit">{{fruit}}</option>
             </select>
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button [disabled]="!userForm.form.valid" type="submit" class="btn btn-default">Submit</button>
         <button class="btn btn-primary" (click)="addUser()" type="button" class="btn btn-default">addUser</button>
     </form>
 </div>
