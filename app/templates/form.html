@@ -1,0 +1,50 @@
+<!--
+    练习的表单:
+        1.username
+        2.email
+        3.motto
+        4.favorite
+ -->
+<!---->
+<div class="DEMO-form-container">
+    <h1>This is A Awesome Form!</h1>
+    <p class="user-msg">UserInfo: {{userInfo}}</p>
+    <form class="DEMO-form">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input  [(ngModel)]="user.username" name="username" required #spy #username="ngModel"
+                    type="text" class="form-control" id="username" placeholder="Username">
+            <p [hidden]="username.valid || username.pristine" class="alert alert-danger">用户名不可以为空!</p>
+            <p>className: {{spy.className}}</p>
+            <!--<input  [ngModel]="user.username"-->
+                    <!--(ngModelChange)="user.username = $event"-->
+                    <!--type="text" class="form-control" id="username" placeholder="Username">-->
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input  [(ngModel)]="user.email" name="email"
+                    type="email" class="form-control" id="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <label for="motto">Motto</label>
+            <input  [(ngModel)]="user.motto" name="motto"
+                    type="text" class="form-control" id="motto" placeholder="Motto">
+        </div>
+        <div class="form-group">
+            <label for="favorite">Favorite fruit</label>
+            <!--<select [(ngModel)]="user.favorite"-->
+                    <!--id="favorite" class="form-control">-->
+                <!--<option value="apple">apple</option>-->
+                <!--<option value="banana">banana</option>-->
+                <!--<option value="pear">pear</option>-->
+                <!--<option value="orange">orange</option>-->
+            <!--</select>-->
+            <select [(ngModel)]="user.favorite" name="favorite" id="favorite" class="form-control">
+                <option *ngFor="let fruit of favoriteFruitList"
+                        [value]="fruit">{{fruit}}</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+        <button class="btn btn-primary" (click)="addUser()" type="button" class="btn btn-default">addUser</button>
+    </form>
+</div>
