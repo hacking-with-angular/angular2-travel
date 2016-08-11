@@ -5,7 +5,7 @@ import {AppComponent} from './app.component';
 //noinspection TypeScriptValidateTypes
 //bootstrap(AppComponent);
 
-import {AppComponent} from './app.component';
+//import {AppComponent} from './app.component';
 //noinspection TypeScriptValidateTypes
 bootstrap(AppComponent, [
     disableDeprecatedForms(),
