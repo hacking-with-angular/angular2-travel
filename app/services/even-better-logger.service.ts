@@ -7,6 +7,7 @@ export class EvenBetterLogger extends BetterLogger{
     //logs: string[] = [];
 
     constructor(private loggerHelper: LoggerHelper) {
+        console.log('[3] from EventBetterLogger!');
         super();
         this.loggerHelper.increment();
     }

@@ -16,10 +16,14 @@ import {UserService} from "./services/user.service";
     selector: 'my-app',
     templateUrl: 'app/templates/app.html',
     providers: [
-      //UserService,
+      //UserService, // 直接使用服务
       //  Logger
-      //  {provide: Logger, useClass: BetterLogger}
-      [LoggerHelper, {provide: Logger, useClass: EvenBetterLogger}]
+      //  BetterLogger,
+      //  {provide: Logger, useClass: BetterLogger} // 只能使用Logger
+      //[LoggerHelper, {provide: Logger, useClass: EvenBetterLogger}], // 添加依赖的使用
+      //[BetterLogger,{provide: Logger, useExisting: BetterLogger}] // 别名
+      {provide: BetterLogger, useClass: BetterLogger}, // 别名
+      [BetterLogger, {provide: Logger, useExisting: BetterLogger}] // 别名 使用useExisting避免创建了两个实例
     ],
     directives: [
         FormComponent
