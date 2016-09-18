@@ -8,6 +8,7 @@
 + [**basics-demo-forms**][4] 基础知识部分,这一部分主要讲解关于表单的知识,还涉及到一些组件的知识
 + [**basics-demo-forms-v1**][5] 文章使用的一个分支,和上面的差不多
 + [**basics-demo-di-test**][6] 基础知识部分,关于**依赖注入**的练习
++ [**basics-demo-di-test-1**][7] 讲解**依赖注入**时使用的分支
 
 
 
@@ -17,3 +18,4 @@
 [4]:https://github.com/hacking-with-angular/angular2-travel/tree/basics-demo-forms
 [5]:https://github.com/hacking-with-angular/angular2-travel/tree/basics-demo-forms-v1
 [6]:https://github.com/hacking-with-angular/angular2-travel/tree/basics-demo-di-test
+[7]:https://github.com/hacking-with-angular/angular2-travel/tree/basics-demo-di-test-1
