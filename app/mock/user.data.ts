@@ -10,3 +10,7 @@ export const USERS: User[] = [
     {id: 7, name: 'dreamapple7'},
     {id: 8, name: 'dreamapple8'}
 ];
+
+//export const USERS: User[] = [
+//    new User(1, 'dreamapple1')
+//];
