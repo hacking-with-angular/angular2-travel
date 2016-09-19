@@ -9,8 +9,8 @@
 + [**basics-demo-forms-v1**][5] 文章使用的一个分支,和上面的差不多
 + [**basics-demo-di-test**][6] 基础知识部分,关于**依赖注入**的练习
 + [**basics-demo-di-test-1**][7] 讲解**依赖注入**时使用的分支
-+ [**basics-demo-di-services**][8] 基础知识部分,关于**service(服务)**的练习
-+ [**basics-demo-di-services-v1**][9] 讲解**services(服务)**时使用的分支
++ [**basics-demo-services**][8] 基础知识部分,关于**service(服务)**的练习
++ [**basics-demo-services-v1**][9] 讲解**services(服务)**时使用的分支
 
 
 
