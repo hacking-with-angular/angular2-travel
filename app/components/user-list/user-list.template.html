@@ -1,0 +1,8 @@
+<p>User List</p>
+<input name="username" [(ngModel)]="username" type="text">
+<button (click)="addNewUser()">Add new User</button>
+<ul>
+    <li highlight *ngFor="let u of users">
+        {{u.id}} -> {{u.username}}
+    </li>
+</ul>
