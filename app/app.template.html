@@ -1,3 +1,12 @@
+<search></search>
+<hr>
 <div class="welcome">
-    Welcome to here
+    Http Module Test
+    <input type="number" #articleId>
+    <button (click)="update(articleId.value, articleData)">update</button>
 </div>
+<ul>
+    <li *ngFor="let u of users">
+        {{u | json}}
+    </li>
+</ul>

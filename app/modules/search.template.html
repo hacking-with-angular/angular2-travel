@@ -1,0 +1,6 @@
+<h1>Search Component</h1>
+<input [(ngModel)]="githubUser" (keyup)="search()" type="text">
+<button (click)="search()">click</button>
+<li *ngFor="let u of users | async">
+    {{u.id}}
+</li>
